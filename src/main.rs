@@ -8,8 +8,8 @@ use std::time::{Duration, Instant};
 
 use sdl2::gfx::primitives::DrawRenderer;
 
-const SCREEN_WIDTH: u32 = 1920;
-const SCREEN_HEIGHT: u32 = 1080;
+const SCREEN_WIDTH: u32 = 900;
+const SCREEN_HEIGHT: u32 = 900;
 struct Source {
     x: u32,
     y: u32,
@@ -20,13 +20,10 @@ struct Source {
 }
 impl Source {
     fn rayonnement(&self, x: u32, y: u32, t: f32) -> f32 {
-        return self.amp
-            * (self.phi - self.omega * t
-                + self.k
-                    * ((x as i32 - self.x as i32).pow(2) as f32
-                        + (y as i32 - self.y as i32).pow(2) as f32)
-                        .sqrt() as f32)
-                .sin();
+        let dist = ((x as i32 - self.x as i32).pow(2) as f32
+            + (y as i32 - self.y as i32).pow(2) as f32)
+            .sqrt() as f32;
+        return (self.amp) * (self.phi - self.omega * t + self.k * dist).sin();
     }
 }
 fn interference(liste_sources: &[Source], x: u32, y: u32, t: f32) -> sdl2::pixels::Color {
