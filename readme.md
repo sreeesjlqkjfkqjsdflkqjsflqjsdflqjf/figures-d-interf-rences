@@ -1,2 +1,2 @@
 # Wave propagation nice animations generator™
-![](https://github.com/sreeesjlqkjfkqjsdflkqjsflqjsdflqjf/figures-d-interf-rences/images/out.gif)
+![](https://github.com/sreeesjlqkjfkqjsdflkqjsflqjsdflqjf/figures-d-interf-rences/blob/master/image/out.gif)
